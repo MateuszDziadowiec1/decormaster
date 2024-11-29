@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gallery of construction and renovation projects by At Decor-Master.">
+    <title>Construction Gallery | Decor-Master</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <div class="logo-container">
+            <a href="decor.html">
+            <img src="logo firmy.png" alt="Decor-Master Logo" class="logo">
+            </a>
+        </div>
+        <div class="nav-container">
+            <nav>
+                <ul>
+                    <li><a href="decor.html">Home</a></li>
+                    <li><a href="galeria.html">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="galeria.html">EN</a> | <a href="galeria-pl.html">PL</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Construction Gallery Section -->
+    <section class="construction-gallery">
+        <h2>Our Construction Work</h2>
+
+        <!-- Bathroom Renovation -->
+        <div class="section-title">
+            <h3>Bathroom Renovation Example</h3>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="zdjecia/lazienka1.jpg" alt="Bathroom Before Renovation">
+                <div class="overlay">
+                    
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="zdjecia/lazienka2.jpg" alt="Bathroom During Renovation">
+                <div class="overlay">
+                    
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="zdjecia/lazienka3.jpg" alt="Bathroom After Renovation">
+                <div class="overlay">
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Garden Styling -->
+        <div class="section-title">
+            <h3>Garden Styling</h3>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="zdjecia/ogrodek1.jpg" alt="Garden Design Before">
+                <div class="overlay">
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="zdjecia/ogrodek2.jpg" alt="Garden Design After">
+                <div class="overlay">
+                </div>
+            </div>
+        </div>
+
+        <!-- Before and After Projects -->
+        <div class="section-title">
+            <h3>Before and After Our Work</h3>
+        </div>
+        <div class="before-after">
+            <div class="gallery-item before">
+                <img src="zdjecia/przedkuchnia.jpg" alt="Before Kitchen Renovation">
+                <div class="overlay">
+                    <p>Before Kitchen Renovation</p>
+                </div>
+            </div>
+            <div class="gallery-item after">
+                <img src="zdjecia/pokuchnia.jpg" alt="After Kitchen Renovation">
+                <div class="overlay">
+                    <p>After Kitchen Renovation</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="before-after">
+            <div class="gallery-item before">
+                <img src="zdjecia/przedschody.jpg" alt="Before Stairs Work">
+                <div class="overlay">
+                    <p>Before Staircase Work</p>
+                </div>
+            </div>
+            <div class="gallery-item after">
+                <img src="zdjecia/poschody.jpg" alt="After Stairs Work">
+                <div class="overlay">
+                    <p>After Staircase Work</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="before-after">
+            <div class="gallery-item before">
+                <img src="zdjecia/przedplot.jpg" alt="Before Commercial Space Renovation">
+                <div class="overlay">
+                    <p>Before Commercial Space Renovation</p>
+                </div>
+            </div>
+            <div class="gallery-item after">
+                <img src="zdjecia/poplot.jpg" alt="After Commercial Space Renovation">
+                <div class="overlay">
+                    <p>After Commercial Space Renovation</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <p><strong>Phone:</strong> 07522954832 | 07305602619</p>
+        <p><strong>Email:</strong> <a href="mailto:decormasterbuilders@gmail.com">decormasterbuilders@gmail.com</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 At Decor-Master. All rights reserved.</p>
+    </footer>
+    <script>
+        let lastScrollTop = 0; // Zmienna przechowująca ostatnią pozycję przewinięcia
+        let header = document.querySelector("header"); // Wybieramy nagłówek
+    
+        window.addEventListener("scroll", function() {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop; // Aktualna pozycja przewinięcia
+    
+            // Jeśli przewijamy w dół
+            if (currentScroll > lastScrollTop) {
+                // Ukrywamy nagłówek
+                header.style.top = "-100px";
+            } else if (currentScroll === 0) {
+                // Jeśli wróciliśmy na samą górę, ustawiamy nagłówek na widoczny
+                header.style.top = "0";
+            }
+    
+            // Uaktualniamy ostatnią pozycję przewinięcia
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        });
+    </script>
+</body>
+</html>

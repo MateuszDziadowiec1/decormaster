@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional building and renovation services in Cambridge and surrounding areas. Reliable and high-quality solutions tailored to your needs.">
+    <title>Decor-Master | Building & Renovation Experts</title>
+    <!-- Czcionka Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Nawigacja -->
+<header id="header">
+    <div class="logo-container">
+        <a href="decor.html">
+            <img src="logo firmy.png" alt="Decor-Master Logo" class="logo">
+        </a>
+    </div>
+    <div class="nav-container">
+        <nav>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="galeria.html">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="decor.html">EN</a> | <a href="decor-pl.html">PL</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+    <!-- Hero Image -->
+    <section class="hero">
+        <img src="remont.png" alt="elo" class="hero-image">
+        <div class="hero-content">
+            <h2>Building Your Vision</h2>
+            <p>Reliable Renovation & Construction Experts in Cambridge!</p>
+            <a href="galeria.html" target="_blank" class="cta-button">Check out our projects</a>
+        </div>
+    </section>
+    
+    <!-- O nas -->
+    <section id="about" class="about-section">
+        <h2>About Us</h2>
+        <p>At Decor-Master is a team of professionals dedicated to delivering exceptional renovation services. From full house makeovers to property maintenance, we prioritize quality and client satisfaction.</p>
+    </section>
+
+   <!-- Usługi -->
+<section id="services" class="services-section">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+        <div class="service">
+            <h3>Full Bathroom Renovations</h3>
+            <p>Transform your bathroom into a luxurious space with full remodeling, from design to final finish.</p>
+        </div>
+        <div class="service">
+            <h3>Full House Renovations</h3>
+            <p>Comprehensive solutions for your entire home, ensuring a complete makeover from top to bottom.</p>
+        </div>
+        <div class="service">
+            <h3>Loft Conversions</h3>
+            <p>Maximize your living space by converting your loft into a functional and stylish room.</p>
+        </div>
+        <div class="service">
+            <h3>Plumbing Services</h3>
+            <p>Comprehensive plumbing services including installations, repairs, and modernizations for your home or business.</p>
+        </div>
+        <div class="service">
+            <h3>Electrical Services</h3>
+            <p>Expert electrical solutions for installation, repairs, and upgrades to ensure your safety and comfort.</p>
+        </div>
+        <div class="service">
+            <h3>Tiling</h3>
+            <p>High-quality tiling services for your bathroom, kitchen, floors, and walls to enhance your spaces.</p>
+        </div>
+        <div class="service">
+            <h3>Flooring</h3>
+            <p>Durable, stylish flooring options for every room in your home or office, including hardwood, laminate, and vinyl.</p>
+        </div>
+        <div class="service">
+            <h3>Woodwork</h3>
+            <p>Custom woodwork and carpentry services to fit your needs, from furniture to structural elements.</p>
+        </div>
+        <div class="service">
+            <h3>Painting & Decorating</h3>
+            <p>Transform your space with professional painting and decorating services, ensuring a flawless finish.</p>
+        </div>
+        <div class="service">
+            <h3>Gardening & Landscaping</h3>
+            <p>Design and maintain your garden with our expert gardening and landscaping services.</p>
+        </div>
+        <div class="service">
+            <h3>Property Maintenance</h3>
+            <p>Keep your property in excellent condition with our regular maintenance services, including repairs and inspections.</p>
+        </div>
+        <div class="service">
+            <h3>Clearance</h3>
+            <p>Efficient clearance services for homes, offices, and gardens, ensuring a clean and clutter-free space.</p>
+        </div>
+    </div>
+</section>
+
+    <!-- Kontakt -->
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <p><strong>Phone:</strong> 07522954832 | 07305602619</p>
+        <p><strong>Email:</strong> <a href="mailto:decormasterbuilders@gmail.com">decormasterbuilders@gmail.com</a></p>
+        <p>*We cover Cambridge and surrounding areas. Contact us for a free, no-obligation quote!</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 At Decor-Master. All rights reserved.</p>
+    </footer>
+
+    <script>
+        window.onscroll = function() { toggleHeader() };
+
+        var header = document.querySelector("header");
+        var aboutUs = document.querySelector("#about");
+        var lastScrollTop = 0;
+
+        function toggleHeader() {
+            var currentScroll = window.pageYOffset;
+
+            if (currentScroll >= aboutUs.offsetTop) {
+                header.classList.add("fixed");
+                header.classList.remove("hidden");
+            } else {
+                header.classList.remove("fixed");
+                header.classList.add("hidden");
+            }
+
+            if (currentScroll > lastScrollTop && currentScroll >= aboutUs.offsetTop) {
+                header.classList.add("fixed");
+            }
+
+            if (currentScroll <= 0) {
+                header.classList.remove("hidden");
+                header.classList.add("fixed");
+            }
+
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        }
+    </script>
+</body>
+</html>
