@@ -145,8 +145,13 @@
     <footer>
         <p>&copy; 2024 At Decor-Master. Wszelkie prawa zastrzeżone.</p>
     </footer>
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img id="lightbox-image" src="" alt="Large view">
+    </div>
+    
+    
     <script>
-          
 let lastScrollTop = 0;
 let header = document.querySelector("header");
 
@@ -163,6 +168,45 @@ window.addEventListener("scroll", function() {
     // Upewniamy się, że nie przekroczymy granicy 0 dla scrolla
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 });
-    </script>
+        </script>
+        <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightbox-image");
+    const closeBtn = document.querySelector(".close");
+
+    // Wybieramy tylko obrazy w sekcjach gallery-grid i before-after
+    const galleryItems = document.querySelectorAll(
+        ".gallery-grid img, .before-after img"
+    );
+
+    // Otwieranie lightboxa
+    galleryItems.forEach((item) => {
+        item.addEventListener("click", () => {
+            lightboxImage.src = item.src;
+            lightbox.classList.add("visible");
+        });
+    });
+
+    // Funkcja zamykająca lightbox z animacją
+    const closeLightbox = () => {
+        lightbox.classList.add("closing");
+        setTimeout(() => {
+            lightbox.classList.remove("visible", "closing");
+        }, 300); // Czas musi pasować do `transition` w CSS (0.3s)
+    };
+
+    // Zamknięcie przez kliknięcie przycisku
+    closeBtn.addEventListener("click", closeLightbox);
+
+    // Zamknięcie przez kliknięcie poza obraz
+    lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+});
+
+        </script>
 </body>
 </html>
